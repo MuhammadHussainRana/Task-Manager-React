@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "text": "Gym",
+      "day": "Feb 5th, 2023",
+      "reminder": false,
+      "status": "new",
+      "id": 3
+    },
+    {
+      "text": "Dentist Appointment",
+      "day": "March 21st, 2023",
+      "status": "completed",
+      "reminder": true,
+      "id": 4
+    },
+    {
+      "text": "Tennis Match",
+      "day": "May 22nd, 2023",
+      "reminder": true,
+      "status": "new",
+      "id": 5
+    },
+    {
+      "text": "Movie Night",
+      "day": "May 23rd, 2023",
+      "reminder": false,
+      "status": "new",
+      "id": 6
+    }
+  ]
+}
