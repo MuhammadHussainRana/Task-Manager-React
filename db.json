@@ -22,10 +22,10 @@
       "id": 5
     },
     {
-      "text": "Movie Night",
-      "day": "May 23rd, 2023",
+      "text": "Yoga Class",
+      "day": "March 15th, 2023",
       "reminder": false,
-      "status": "new",
+      "status": "completed",
       "id": 6
     }
   ]

@@ -37,6 +37,23 @@ const deleteTask = async (id) => {
   setTasks(tasks.filter((task) => task.id !== id))
 }
 
+const completeTask = async(id) => {
+  const task = await fetchTask(id)
+  const updatedStatus = {...task, status: 'completed'}
+
+  const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+    method:'PUT',
+    headers : {
+      'Content-type' : 'application/json'
+    },
+    body: JSON.stringify(updatedStatus)
+  })
+
+  const data = res.json()
+
+  setTasks(tasks.map((task) => task.id === id ? {...task, status: data.status} : task ))
+
+}
 const toggleReminder = async (id) => {
   const taskToToggle = await fetchTask(id)
   const updatedTask = {...taskToToggle, reminder: !taskToToggle.reminder}
@@ -74,15 +91,14 @@ const addTask = async (task) => {
         <Routes>
           <Route path='/' element = {
             <>
-              { tasks.length > 0 ? ( <Tasks tasks = {tasks} onDelete = {deleteTask} onToggle = {toggleReminder}/>) 
+              { tasks.length > 0 ? ( <Tasks tasks = {tasks} onComplete = {completeTask} onToggle = {toggleReminder}/>) 
               : ('No Tasks to show')}
-              {showAddTask && <AddTask onAdd = {addTask}/>}
             </>
           }/>
           <Route path='/history' element={<History tasks = {tasks} />} />
         </Routes>
         
-        <Footer onAdd = {() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+        <Footer onAdd = {addTask}/>
       </div>
     </Router>
     

@@ -25,7 +25,11 @@ const History = ({tasks}) => {
         <IoChevronBackCircleSharp size={50} className= 'back-icon' onClick={() => {
           navigate(-1)
         }} />
+
+        <div>
+        </div>
         </footer>
+        
     </>
   )
 }
