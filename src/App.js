@@ -3,7 +3,6 @@ import Footer from './components/Footer'
 import History from './components/History'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Tasks from './components/Tasks'
-import AddTask from './components/AddTask'
 import { useState, useEffect } from 'react';
 
 function App() {

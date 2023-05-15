@@ -1,6 +1,4 @@
 import { Link, useLocation } from 'react-router-dom'
-import Button  from './Button'
-import AddTask from "./AddTask"
 import AddTaskModal from './AddTaskModal';
 
 
